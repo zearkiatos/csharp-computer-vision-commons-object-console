@@ -1,0 +1,140 @@
+{
+  "info": {
+    "_postman_id": "57de164d-a73c-42ec-ab34-27f3ce420b96",
+    "name": "AzureCognitiveServices",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1347256"
+  },
+  "item": [
+    {
+      "name": "ComputerVision",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Ocp-Apim-Subscription-Key",
+            "value": "{{AZURE_COMPUTER_VISION_API_KEY}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"url\": \"{{AZURE_BLOB_STORAGE_IMAGE_URL}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{AZURE_COMPUTER_VISION_BASE_URL}}/vision/v3.2/analyze?visualFeatures=Description",
+          "host": [
+            "{{AZURE_COMPUTER_VISION_BASE_URL}}"
+          ],
+          "path": [
+            "vision",
+            "v3.2",
+            "analyze"
+          ],
+          "query": [
+            {
+              "key": "visualFeatures",
+              "value": "Description"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ComputerVisionTags",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Ocp-Apim-Subscription-Key",
+            "value": "{{AZURE_COMPUTER_VISION_API_KEY}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://{{AZURE_COMPUTER_VISION_BASE_URL}}/vision/v3.2/analyze?visualFeatures=Tags",
+          "protocol": "https",
+          "host": [
+            "{{AZURE_COMPUTER_VISION_BASE_URL}}"
+          ],
+          "path": [
+            "vision",
+            "v3.2",
+            "analyze"
+          ],
+          "query": [
+            {
+              "key": "visualFeatures",
+              "value": "Tags"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ComputerVisionObjects",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Ocp-Apim-Subscription-Key",
+            "value": "{{AZURE_COMPUTER_VISION_API_KEY}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"url\": \"{{AZURE_BLOB_STORAGE_IMAGE_URL}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{AZURE_COMPUTER_VISION_BASE_URL}}/vision/v3.2/analyze?visualFeatures=Objects",
+          "host": [
+            "{{AZURE_COMPUTER_VISION_BASE_URL}}"
+          ],
+          "path": [
+            "vision",
+            "v3.2",
+            "analyze"
+          ],
+          "query": [
+            {
+              "key": "visualFeatures",
+              "value": "Objects"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
